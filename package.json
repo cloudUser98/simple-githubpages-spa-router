@@ -1,0 +1,19 @@
+{
+  "name": "simple-githubpages-spa-router",
+  "version": "1.0.0",
+  "description": "Simple web router for SPA hosted in Github Pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudUser98/simple-githubpages-spa-router.git"
+  },
+  "author": "clouduser98",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloudUser98/simple-githubpages-spa-router/issues"
+  },
+  "homepage": "https://github.com/cloudUser98/simple-githubpages-spa-router#readme"
+}
