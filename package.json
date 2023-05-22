@@ -2,9 +2,10 @@
   "name": "simple-githubpages-spa-router",
   "version": "1.0.0",
   "description": "Simple web router for SPA hosted in Github Pages",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "build": "npx tsc",
+      "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cloudUser98/simple-githubpages-spa-router/issues"
   },
-  "homepage": "https://github.com/cloudUser98/simple-githubpages-spa-router#readme"
+  "homepage": "https://github.com/cloudUser98/simple-githubpages-spa-router#readme",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
 }
