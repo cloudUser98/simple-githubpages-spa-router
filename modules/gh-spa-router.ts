@@ -22,26 +22,38 @@ class baseRouter implements routerInterface {
 
     //listener = defaultListener;
 
-    listener: () => void;
-
-    constructor(customListener?: () => void) {
-        if (customListener !== undefined) {
-            this.listener = customListener;
-        } else {
-            this.listener = defaultListener;
-        }
-
-        this.addWindowListener();
+    constructor() {
+        this.parsedLocation = this.parseRequestedPath();
     }
+
+    listener!: () => void;
+    parsedLocation: string[];
 
     // Need to check the difference between defining the value of the field
     // with addWindowListener() and addWindowListener = function...
     // because asaning the function value would not let me use "this"
     addWindowListener() {
+        console.log("adding the window listener");
         const browserWindow = window;
 
         browserWindow.addEventListener("hashchange", this.listener);
     }
+
+    getRequestedPath() {
+        return window.location.search.replace("?", "");
+    }
+
+    parseRequestedPath() {
+        var request: string = this.getRequestedPath();
+        let paths: string[] = [];
+        if (request) {
+            paths = request.replace("/", " /").split(" ").slice(1);
+        }
+        console.log("requested path: ", request,"paths: ",  paths);
+
+        return paths
+    }
+    
 }
 
 class gpSpaRouter extends baseRouter implements routerObject {
@@ -49,16 +61,36 @@ class gpSpaRouter extends baseRouter implements routerObject {
     // {path: "/", pageRenderer: () => window.location.pathname = router.DEFAULT_HOST_PATH + "/"},
     // Note: optionals parameters go last always
     constructor(routes: route[], hostPath?: string, customListener?: () => void) {
-        super(customListener)
-        this.DEFAULT_HOST_PATH = hostPath
+        console.log("Creating the router class");
+
+        super()
+
+        console.log(this.parsedLocation);
+
+        if (customListener !== undefined) {
+            this.listener = customListener;
+        } else {
+            this.listener = () => defaultListener(this);
+        }
+
         this.routes = routes;
+        this.DEFAULT_HOST_PATH = hostPath
+
+        this.addWindowListener();
+
+        if (this.parsedLocation.length) this.navigate(this.parsedLocation[0]);
+
     }
 
     DEFAULT_HOST_PATH?: string;
 
     routes: route[];
 
+    checkForPaths() {
+    }
+
     getRoute(path: string) {
+        console.log("get route path: ", path);
         return this.routes.find(route => route.path === path) as route;
     }
 
@@ -98,9 +130,26 @@ class gpSpaRouter extends baseRouter implements routerObject {
     }
 
     navigate(path: string) {
+        console.log("nvaigating to: ", path)
+        if (path === "/") {
+            console.log("hello")
+            this.returnHome();
+            return
+        }
         const route = this.getRoute(path);
         const rendererMethod = this.load_route(route);
+
         this.render(rendererMethod);
+    }
+
+    returnHome() {
+        if (this.DEFAULT_HOST_PATH) {
+            console.log(window.location.pathname);
+            console.log(this.DEFAULT_HOST_PATH);
+            window.location.pathname = this.DEFAULT_HOST_PATH + "/";
+        } else {
+            window.location.pathname = "";
+        }
     }
 }
 

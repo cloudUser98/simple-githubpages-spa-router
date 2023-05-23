@@ -2,7 +2,7 @@ export { createRouter } from './utils/router-utils'
 
 export interface route {
     path: string;
-    pageRenderer: () => void;
+    pageRenderer: (routerInstance: routerObject | undefined) => void;
 }
 
 export interface routerInterface {
@@ -12,12 +12,16 @@ export interface routerInterface {
     * for the automatic navigation
     */
     listener: () => void;
+    parsedLocation: string[];
 
     /**
     * Method that would parse the new window location to get the path
     * for the automatic navigation
     */
     addWindowListener: () => void;
+
+    getRequestedPath: () => string;
+    parseRequestedPath: () => string[];
 }
 
 export interface routerObject {
@@ -30,4 +34,6 @@ export interface routerObject {
     readonly navigate: Function;
     readonly load_route: (route: route) => Function;
     readonly render: (renderMethod: Function) => void;
+    readonly checkForPaths: () => void;
+    readonly returnHome: () => void;
 }
