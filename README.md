@@ -20,5 +20,23 @@ __Topics im studying with this project:__
 This is a simple web router written in Typescript that can help you if you are 
 trying to build a simple SPA using Github Pages as your hosting service.
 
-## Implementation
+## Usage
 
+You can install the library as a npm package with the next command:
+```
+$ npm install simple-githubpages-spa-router
+```
+
+Import the module in your main javascript file and use the method __createRouter()__ to initialize a new gpSpaRouter instance to use in your project.
+```javascript
+// index.js
+import renderMethod1 from "./first_module";
+import renderMethod2 from "./second_module";
+
+import { createRouter } from "simple-githubpages-spa-router";
+
+let router = createRouter([
+    {path: "/first_path", pageRenderer: renderMethod1},
+    {path: "/second_path", pageRenderer: renderMethod2},
+]);
+```
