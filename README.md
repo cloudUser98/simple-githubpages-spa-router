@@ -26,8 +26,8 @@ trying to build a simple SPA using Github Pages as your hosting service.
 ## Usage
 
 + [Installation](#installation)
-+ [createRouter()](#createrouter())
-+ [Basic implementation](#basicimplementation)
++ [createRouter()](#createrouter)
++ [Basic implementation](#basic-implementation)
 
 ### Installation
 
@@ -42,7 +42,7 @@ $ npm install simple-githubpages-spa-router
 ##### __routes__
 Array of the routes defined for the project.
 
-For more information on creating routes please see use [this example](#creatingroutes).
+For more information on creating routes please use [this example](#creating-routes).
 
 ##### __repoName__
 Name of the page repository, this parameter is optional and you can define it only if your github page does not count with a custom domain and it is using the defatult one, example: github.io/repoName/
