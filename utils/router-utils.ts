@@ -1,14 +1,15 @@
-// Porque me deja importar con esa direccion
-import {routerObject, routerInterface, route } from '../index'
-import { baseRouter, gpSpaRouter } from '../modules/gh-spa-router';
+import {routerObject, route } from '../index'
+import { gpSpaRouter } from '../modules/gh-spa-router';
 
 export {
     createRouter,
     defaultListener,
 }
 
+/*
+    * Main method for creating the Router object for the project
+*/
 function createRouter(routes: route[], repoName?: string, customListener?: () => void) {
-    console.log("creating a route");
     return new gpSpaRouter(routes, repoName, customListener);
 }
 
@@ -16,13 +17,16 @@ function createRouter(routes: route[], repoName?: string, customListener?: () =>
     * Default listener method that will be attached to the Window object
     * if there is no custom listener declared.
 */
-
 function defaultListener(routerInstance: routerObject) {
-    let path = window.location.hash.replace("#", "")
+    const currentWindowLocation = window.location;
 
-    console.log("catcech path: ", path);
-    if (path.includes("/")) routerInstance.navigate(path);
-}
+    // Checking if the path was pushed as a hashed path: "#/path"
+    const hashPath = currentWindowLocation.hash.replace("#/", "/")
 
-function home(routerInstance: routerObject) {
+    // Checking if the path was pushed as a normal path: "/path"
+    const path = currentWindowLocation.pathname.replace(routerInstance.DEFAULT_HOST_PATH!, "")
+
+    const navigationPath = hashPath || path;
+
+    routerInstance.navigate(navigationPath);
 }

@@ -12,6 +12,10 @@ export interface routerInterface {
     * for the automatic navigation
     */
     listener: () => void;
+
+    /**
+        * Parsed location
+    */
     parsedLocation: string[];
 
     /**
@@ -20,17 +24,22 @@ export interface routerInterface {
     */
     addWindowListener: () => void;
 
+    /**
+        * Returns the requestd path after reload
+    */
     getRequestedPath: () => string;
+
+    /**
+        * Parse the requested path on reload and returns an array of the
+    * parsed paths
+    */
     parseRequestedPath: () => string[];
 }
 
 export interface routerObject {
     DEFAULT_HOST_PATH?: string;
-    // Rcord<Route> gives an error
     routes: Array<route> | route[];
-    //routes: route[];
     readonly getRoute: (path: string) => route;
-    //readonly getRoute: (path: string) => route | undefined;
     readonly navigate: Function;
     readonly load_route: (route: route) => Function;
     readonly render: (renderMethod: Function) => void;
