@@ -88,7 +88,7 @@ let router = createRouter([
 
 ### Creating anchor ```<a>``` tags for navigation
    
-You can tell your web page when to render the content attached to a path by using the ```<a>``` tag, writing the path as a reference with the __hash format__:
+You can tell your web page when to render the content attached to a path by using the ```<a>``` tag and writing the path as a reference with the __hash format__:
    
 ```html
 <a href="#/myPage"> Render my content </>
