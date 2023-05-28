@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        let urlStart = ""
+            locationPaths = window.location.pathname 
+            paths = locationPaths.split("/", 2)
+            path = locationPaths.replace(("/" + paths[1]), "")
+            
+        paths[1] && (urlStart = "/");
+
+        window.location = urlStart + paths[1] + "/?" + path;
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
