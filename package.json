@@ -1,0 +1,24 @@
+{
+  "name": "demo-page",
+  "version": "1.0.0",
+  "description": "Demo page for showcasing the use of the router",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudUser98/simple-githubpages-spa-router.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudUser98/simple-githubpages-spa-router/issues"
+  },
+  "homepage": "https://github.com/cloudUser98/simple-githubpages-spa-router#readme",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "rollup": "^3.23.0",
+    "simple-githubpages-spa-router": "^1.0.1"
+  }
+}
