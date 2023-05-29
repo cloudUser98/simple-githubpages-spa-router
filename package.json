@@ -1,6 +1,6 @@
 {
   "name": "simple-githubpages-spa-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple web router for SPA hosted in Github Pages",
   "main": "src/index.js",
   "types": "lib/main.d.ts",
