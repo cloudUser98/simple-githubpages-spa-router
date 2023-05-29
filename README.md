@@ -85,7 +85,7 @@ import { createRouter } from "simple-githubpages-spa-router";
 let router = createRouter([
     {path: "/first_path", pageRenderer: renderMethod1},
     {path: "/second_path", pageRenderer: renderMethod2},
-]);
+], '/repositoryName');
 ```
 
 ### Creating anchor ```<a>``` tags for navigation
