@@ -93,7 +93,7 @@ function defaultListener(routerInstance) {
 createRouter([
     {path: '/about', pageRenderer: about},
     {path: '/repository', pageRenderer: repository},
-], 'simple-githubpages-spa-router');
+], '/simple-githubpages-spa-router');
 
 const root = document.getElementById("root");
 
