@@ -90,12 +90,10 @@ function defaultListener(routerInstance) {
     routerInstance.navigate(navigationPath);
 }
 
-console.log("LOADED JS");
-
 createRouter([
     {path: '/about', pageRenderer: about},
     {path: '/repository', pageRenderer: repository},
-], 'simple-githubpages-spa-router');
+], 'cloudUser98-devlog');
 
 const root = document.getElementById("root");
 
