@@ -1,5 +1,7 @@
 # simple-githubpages-spa-router
-Simple web router for SPA hosted with Github Pages
+Simple web router for SPA hosted with Github Pages.
+
+You can see the basic use of this library in [this Demo Page](https://clouduser98.github.io/simple-githubpages-spa-router/)
 
 ## Disclaimer
 __Im not by any means an experienced web developer__. This repository started as a
