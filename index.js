@@ -3,7 +3,7 @@ import { createRouter } from 'simple-githubpages-spa-router'
 const router = createRouter([
     {path: '/about', pageRenderer: about},
     {path: '/repository', pageRenderer: repository},
-], 'cloudUser98-devlog');
+], 'simple-githubpages-spa-router');
 
 const root = document.getElementById("root");
 
