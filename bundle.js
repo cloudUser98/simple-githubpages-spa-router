@@ -95,9 +95,9 @@ createRouter([
     {path: '/repository', pageRenderer: repository},
 ], '/simple-githubpages-spa-router');
 
-const root = document.getElementById("root");
 
 function about() {
+    const root = document.getElementById("root");
     root.innerHTML = `
         <p>
             This is a demo page to showcase the basic use of the router.
@@ -107,6 +107,7 @@ function about() {
 }
 
 function repository() {
+    const root = document.getElementById("root");
     root.innerHTML = `
         <p>
             If you want to use this package you can visit the GitHub repository.
