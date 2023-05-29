@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Simple web router for SPA hosted in Github Pages",
   "main": "src/index.js",
+  "types": "lib/main.d.ts",
   "scripts": {
-      "build": "npx tsc",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
