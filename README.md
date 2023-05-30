@@ -114,3 +114,4 @@ By default, github pages will redirect you to a 404 error page when trying to lo
    
 - [ ] Handling of nested paths
 - [ ] Support for a custom 404 error page renderer method
+- [ ] A history property for the router to show all past navigated routes
